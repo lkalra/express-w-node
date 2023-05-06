@@ -1,0 +1,80 @@
+Node.js
+
+open node console
+cd - to know where are you in system
+cd _folder name - to enter in the folder
+dir - to get list of files/folder
+mkdir folder name - to create folder
+touch _file name - to create file
+node _file name - to run the file
+cd/ - to get out of folder
+
+REPL- read evaluatiob print loop
+node - access repl will show > - BEHAVE LIKE CHROME console
+.exit/ctrl c twice -exit console
+clear- clears console
+
+
+---------------Externel node module--------------
+npm init in node console to initialize node project
+will ask for details of project
+creates package.json after adding data
+
+--------------- fresh example-----------------
+headover to npmjs.com - for external packages
+search superheroes
+make sure you're in right folder(Node) in my case
+
+------------------for superheroes-------------------
+install - npm install --save superheroes ( in node console)
+installing this will add superheores dependency in json & creates lock json and node module folder
+
+use in vs code - var superheroes = require("superheroes") thn var myHero = superheroes.random(); thn console.log(myHero)
+
+node index.js in node console will give random superhero
+
+------------------for supervillian-------------------
+install - npm install --save supervillians ( in node console)
+installing this will add supervillians dependency in json
+
+use in vs code - var supervillians = require("supervillians") thn var myVillian = superVillians.random(); thn console.log(myVillian)
+
+node index.js in node console will give random supervillians 
+
+
+-----------------------------------------------------Express w Node---------------------------------------------------------------------
+
+---------in node console check the location 
+mkdir my-express-server - create new directry called my-express-server
+cd my-express-server - cd in new directory
+touch server.js - create file server.js
+npm init - initialiset npm 
+
+fill the details
+will create package.json
+
+npm install express - install express and adding express in dependency
+
+--------in vsCode
+const express = require("express")
+const app = express()
+
+//app.get defines what should happen when someone makes get request to /(home) & function tells what to do when request happens
+app.get("/", function(req, res){
+    res.send("<h1>hello</h1>")
+})
+
+app.get("/contact", function(req, res){
+    res.send("Contact me at: 132637388")
+})
+
+app.listen(3000, function(){console.log("server started on port 3000)})
+
+------in console
+node server.js
+will print server started on port 3000
+localhost:3000 is working now 
+
+//nodemon helps in automatic rerun server when changes occur
+install nodemon - npm install -g nodemon
+check project folder - nodemon server.js
